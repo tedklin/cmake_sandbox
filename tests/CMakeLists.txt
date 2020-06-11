@@ -27,4 +27,4 @@ endmacro()
 
 
 package_add_test(ContinuousSystemTest ContinuousSystemTest.cpp)
-# ^ ADD MORE TESTS HERE
+# ^ ADD NEW TESTS HERE

@@ -5,7 +5,7 @@
 
 class ContinuousSystem {
  public:
-  explicit ContinuousSystem(Eigen::Matrix3d &A)
+  explicit ContinuousSystem(const Eigen::Matrix3d &A)
       : ContinuousSystem(A, Eigen::Vector3d::Zero(),
                          Eigen::RowVector3d::Zero()) {}
 

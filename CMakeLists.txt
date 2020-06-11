@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 3.14) # 3.11 has FetchContent
+cmake_minimum_required(VERSION 3.14) # 3.11 minimum (FetchContent)
 
 project(cmake_sandbox LANGUAGES CXX)
 
-# Only do these if this is the main project, and not if it is included through add_subdirectory
+# Only do these if this is the main project, 
+# and not if it is included through add_subdirectory
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   # c++17 enabled compiler
   set(CMAKE_CXX_STANDARD 17)
@@ -27,7 +28,7 @@ find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 # FetchContent
 include(FetchContent)
-# macro for FetchContent_MakeAvailable (introduced in CMake 3.14)
+# macro for FetchContent_MakeAvailable (included in CMake 3.14)
 if(${CMAKE_VERSION} VERSION_LESS 3.14)
   macro(FetchContent_MakeAvailable NAME)
     FetchContent_GetProperties(${NAME})
@@ -46,6 +47,5 @@ add_subdirectory(examples)
 
 # test code is here
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
-  enable_testing()
   add_subdirectory(tests)
 endif()
