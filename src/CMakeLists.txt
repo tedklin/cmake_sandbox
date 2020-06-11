@@ -17,8 +17,8 @@ add_library(cmake_sandbox_lib ${SOURCE_LIST} ${HEADER_LIST})
 target_include_directories(cmake_sandbox_lib PUBLIC ../include)
 
 # dependency on Eigen
-# TODO: does my examples' dependency on Eigen justify this being PUBLIC
-# or should i link the examples to Eigen separately, both PRIVATE?
+# TODO: do my examples' and tests' dependencies on Eigen justify this being PUBLIC
+# or should i link the examples and tests to Eigen separately, all PRIVATE?
 target_link_libraries(cmake_sandbox_lib PUBLIC Eigen3::Eigen)
 
 # All users of this library will need at least C++11

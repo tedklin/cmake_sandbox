@@ -7,11 +7,10 @@
 // a continuous-time system taken from a homework problem for EECS16B @Berkeley
 
 int main() {
-  Eigen::Matrix3d A;
-
   // clang-format automatically turns Eigen's comma initializer into a single
   // line, so the commented brackets are here to suppress that
 
+  Eigen::Matrix3d A;
   A << /*[[*/ 0, 1, 0, /*]*/
       /*[*/ 100, 0, 0, /*]*/
       /*[*/ 0, 0, 0;   /*]]*/
@@ -25,6 +24,7 @@ int main() {
   K << 20, 5, 0.01;
 
   ContinuousSystem salto_jumping_robot(A, B, K);
+
   std::cout << "System Matrix\n";
   std::cout << salto_jumping_robot.GetSystem() << '\n';
   std::cout << "\nEigenvalues\n";
