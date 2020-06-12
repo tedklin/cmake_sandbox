@@ -1,4 +1,5 @@
-# CMake Sandbox [![Build Status](https://travis-ci.com/tedklin/cmake_sandbox.svg?branch=master)](https://travis-ci.com/tedklin/cmake_sandbox)
+# CMake Sandbox
+[![Build Status](https://travis-ci.com/tedklin/cmake_sandbox.svg?branch=master)](https://travis-ci.com/tedklin/cmake_sandbox)
 
 This is a simple CMake project setup created from scratch, based heavily on [this excellent guide](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
 The plan is to continually add to this and use it as a standardized template for the creation of new personal CMake projects.
@@ -29,7 +30,7 @@ To run examples:
 
 ### External library usage
 - [Eigen3](https://eigen.tuxfamily.org/dox/TopicCMakeGuide.html) 
-  - tested on Ubuntu 18.04 using both apt ([libeigen3-dev](https://packages.ubuntu.com/bionic/libeigen3-dev)) and the [manual installation method](http://eigen.tuxfamily.org/index.php?title=Main_Page).
+  - tested Ubuntu 18.04 installation methods including both apt ([libeigen3-dev](https://packages.ubuntu.com/bionic/libeigen3-dev)) and the [manual download and install](http://eigen.tuxfamily.org/index.php?title=Main_Page).
 - [GoogleTest](https://github.com/google/googletest)
   - this is accessed via FetchContent, which was introduced in CMake 3.11.
 
