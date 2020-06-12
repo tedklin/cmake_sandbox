@@ -3,7 +3,7 @@
 #include "Eigen/Eigen"
 #include "gtest/gtest.h"
 
-TEST(ContinuousSystemTest, SanityCheck) { ASSERT_EQ(21, 20); }
+TEST(ContinuousSystemTest, SanityCheck) { ASSERT_EQ(20, 20); }
 
 TEST(ContinuousSystemTest, SaltoStable) {
   Eigen::Matrix3d A;
