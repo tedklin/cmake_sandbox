@@ -1,20 +1,44 @@
-## CMake Sandbox
+# CMake Sandbox [![Build Status](https://travis-ci.com/tedklin/cmake_sandbox.svg?branch=master)](https://travis-ci.com/tedklin/cmake_sandbox)
 
 This is a simple CMake project setup created from scratch, based heavily on [this excellent guide](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
 The plan is to continually add to this and use it as a standardized template for the creation of new personal CMake projects.
 
 Note that the C++ code included is irrelevant, the project setup is the focus of this repository.
 
-### Common dependencies supported
+## Running CMake
+
+Building with [CMake 3.13.5](https://cmake.org/cmake/help/v3.13/manual/cmake.1.html) onwards (otherwise use the manual procedure of creating build directory etc.):
+~~~
+cmake -S . -B build
+cmake --build build
+~~~
+
+Assuming you've built the project and are in the project home directory...
+
+To test:
+~~~
+cmake --build build --target test
+~~~
+
+To run examples:
+~~~
+/build/examples/MyExampleExecutable
+~~~
+
+## Common features supported
+
+### External library usage
 - [Eigen3](https://eigen.tuxfamily.org/dox/TopicCMakeGuide.html) 
-  - at the moment this needs to be downloaded separately and *installed*, not just copied to the standard header-only library location in your operating system.
-  - eventually want to support the more convenient method of installation via libeigen3-dev.
+  - tested on Ubuntu 18.04 using both apt ([libeigen3-dev](https://packages.ubuntu.com/bionic/libeigen3-dev)) and the [manual installation method](http://eigen.tuxfamily.org/index.php?title=Main_Page).
 - [GoogleTest](https://github.com/google/googletest)
   - this is accessed via FetchContent, which was introduced in CMake 3.11.
 
+### Continuous integration
+- [Travis-CI](https://travis-ci.com/github/tedklin/cmake_sandbox) with GoogleTest
+
 ### Misc possible things to try / test
-- interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator
-  - figure out how code completion for referenced libraries works with CMake
-- Doxygen
-- continuous integration
+- interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator / CLion
+  - figure out how various code completion tools work for referenced external libraries works with CMake 
+      - referencing local installations works, but that can be unreliable and a bit [messy, especially for header files](https://github.com/tedklin/cmake_sandbox/blob/master/include/cmake_sandbox/Core.h).
 - formally packaging projects as libraries for others to use
+- ccache
