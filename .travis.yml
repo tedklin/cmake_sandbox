@@ -1,0 +1,13 @@
+language: C++
+dist: bionic
+compiler: gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libeigen3-dev
+script:
+  - cmake -S . -B build
+  - cmake --build build
+  - cmake --build build --target test
