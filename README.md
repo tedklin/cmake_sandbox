@@ -39,6 +39,6 @@ To run examples:
 ### Misc possible things to try / test
 - interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator / CLion
   - figure out how various code completion tools work for referenced external libraries works with CMake 
-      - referencing local installations works, but that can be unreliable and a bit [messy, especially for header files](https://github.com/tedklin/cmake_sandbox/blob/master/include/cmake_sandbox/Core.h).
+      - referencing local installations works, but that can be unreliable and a bit messy ([see header files for sublime](https://github.com/tedklin/cmake_sandbox/blob/sublime/include/cmake_sandbox/Core.h)).
 - formally packaging projects as libraries for others to use
 - ccache
