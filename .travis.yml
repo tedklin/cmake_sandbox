@@ -14,7 +14,7 @@ script:
   - sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ bionic main'
   - sudo apt-get update
   - sudo apt-get install cmake
-  - cmake --version
+  - sudo env "PATH=$PATH" cmake --version
   - cmake -S . -B build
   - cmake --build build
   - cmake --build build --target test
