@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "Eigen/Eigen"
 
 // simple continuous-time state feedback system analyzer
 // 3-states, 1-input
