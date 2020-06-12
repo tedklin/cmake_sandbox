@@ -1,6 +1,7 @@
 #include "cmake_sandbox/ContinuousSystem.h"
 
 #include <complex>
+
 #include "Eigen/Eigen"
 
 // in retrospect probably should've inlined the getters in the header

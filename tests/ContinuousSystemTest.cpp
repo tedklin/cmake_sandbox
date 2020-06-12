@@ -3,7 +3,10 @@
 #include "Eigen/Eigen"
 #include "gtest/gtest.h"
 
-// tests that salto is stable
+TEST(ContinuousSystemTest, SanityCheck) {
+  ASSERT_EQ(20, 20);
+}
+
 TEST(ContinuousSystemTest, SaltoStable) {
   Eigen::Matrix3d A;
   A << /*[[*/ 0, 1, 0, /*]*/
