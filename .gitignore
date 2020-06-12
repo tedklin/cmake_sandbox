@@ -1,3 +1,11 @@
+# CUSTOM =========
+
+# i use this directory to store a copy of libraries like gtest so VSCode
+# can still use autocomplete (after maually setting include paths)
+hidden_ext_libs/
+
+# ================
+
 # https://github.com/github/gitignore/blob/master/CMake.gitignore
 CMakeCache.txt
 CMakeFiles
