@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.14)
-# 3.11 minimum (FetchContent)
+cmake_minimum_required(VERSION 3.11)
+# 3.11 minimum (FetchContent), 3.14 preferred
 
 project(cmake_sandbox LANGUAGES CXX)
 
