@@ -8,6 +8,7 @@ addons:
     packages:
       - libeigen3-dev
 script:
+  - mkdir build
   - cmake -S . -B build
   - cmake --build build
   - cmake --build build --target test
