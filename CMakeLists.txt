@@ -6,13 +6,28 @@ project(cmake_sandbox LANGUAGES CXX)
 # Only do these if this is the main project, 
 # and not if it is included through add_subdirectory
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+  # If no default build type is specified, use the presence of a .git
+  # directory to determine whether to build Debug or Release.
+  set(default_build_type "Release")
+  if(EXISTS "${CMAKE_SOURCE_DIR}/.git")
+    set(default_build_type "Debug")
+  endif()
+  if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
+    set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
+        STRING "Choose the type of build." FORCE)
+    # Retain possible values of build type for cmake-gui.
+    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
+      "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+  endif()
+
   # c++17 enabled compiler
   set(CMAKE_CXX_STANDARD 17)
 
-  # Let's ensure -std=c++xx instead of -std=g++xx
+  # ensure -std=c++xx instead of -std=g++xx
   set(CMAKE_CXX_EXTENSIONS OFF)
 
-  # Let's nicely support folders in IDEs
+  # nicely support folders in IDEs
   set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
   # Testing only available if this is the main app

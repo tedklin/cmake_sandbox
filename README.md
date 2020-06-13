@@ -8,7 +8,7 @@ Note that the C++ code included is irrelevant, the project setup is the focus of
 
 ## Running CMake
 
-Building with [CMake 3.13.5](https://cmake.org/cmake/help/v3.13/manual/cmake.1.html) onwards (otherwise use the manual procedure of creating build directory etc.):
+Building with [CMake 3.13.5](https://cmake.org/cmake/help/v3.13/manual/cmake.1.html) onwards (otherwise use the manual procedure of creating the build directory, etc.):
 ~~~
 cmake -S . -B build
 cmake --build build
@@ -25,6 +25,9 @@ To run examples:
 ~~~
 build/examples/MyExampleExecutable
 ~~~
+
+Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if CMake detects the presence of a .git directory (thanks to a neat little [feature](https://blog.kitware.com/cmake-and-the-default-build-type/) shown here). 
+- This means if there's a .git directory detected (if you're doing dev on the project), you can use gdb on executables in the build folder. If there's no .git directory detected, CMake does an optimized "Release" build instead.
 
 ## Common features supported
 
