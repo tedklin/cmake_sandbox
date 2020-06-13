@@ -72,7 +72,7 @@ __pycache__/
 language.settings.xml
 
 # VSCode files
-.vscode/
+# .vscode/
 
 # Qt Creator files
 CMakeLists.txt.user

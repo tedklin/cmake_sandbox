@@ -1,3 +1,7 @@
+**Note that this branch may not contain all the features of the master branch. Use the master branch as the project template and adjust accordingly to VSCode with the differences specified below.**
+
 ## VSCode-specific differences
 
 I haven't found a good way to get VSCode to recognize gtest (GoogleTest) headers since my CMake config pulls it directly from git during the build processs. My hack workaround right now is to maintain a folder within the project directory named ***hidden_ext_libs*** with a copy of gtest's source code. That folder is included in the gitignore to not pollute the repository (the entire project build completely ignores it anyways). I then manually add that folder to VSCode's include path for autocomplete support. The downside to this approach is for large-scale projects with many dependencies, it might be hard to keep track of / remember to sync different library versions. Continuous integration might help a little with that, but it's best to **keep the number of dependencies low**. In addition, it is crucial to **only store copies of libraries in *hidden_ext_libs/* AFTER you ensure it builds on CMake alone!**
+
+This branch also exposes the .vscode folder. Of particular interest is the [c_cpp_properties.json](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference) file, which enables modifications like changing VSCode's include search path mentioned above. Note that my config file is specific to my current machine running Ubuntu 18.04 with all relevant libraries installed (refer to linux notebook for backlog).

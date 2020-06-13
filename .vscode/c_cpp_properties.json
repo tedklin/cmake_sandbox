@@ -1,0 +1,49 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "compilerArgs": [],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/include/**",
+                    "/usr/local/include/eigen3/**",
+                    "${workspaceFolder}/hidden_ext_libs/googletest-release-1.10.0/googletest/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "Ubuntu__cmake_sandbox",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "/usr/local/include/eigen3/**",
+                "${workspaceFolder}/hidden_ext_libs/googletest-release-1.10.0/googletest/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "compilerArgs": [],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/include/**",
+                    "/usr/local/include/eigen3/**",
+                    "${workspaceFolder}/hidden_ext_libs/googletest-release-1.10.0/googletest/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
