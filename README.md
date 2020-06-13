@@ -23,7 +23,7 @@ cmake --build build --target test
 
 To run examples:
 ~~~
-/build/examples/MyExampleExecutable
+build/examples/MyExampleExecutable
 ~~~
 
 ## Common features supported
