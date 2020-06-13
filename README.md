@@ -34,12 +34,12 @@ To run examples:
 - [GoogleTest](https://github.com/google/googletest)
   - this is accessed via FetchContent, which was introduced in CMake 3.11.
 
-### Continuous integration
-- [Travis-CI](https://travis-ci.com/github/tedklin/cmake_sandbox) with GoogleTest
+### Misc features
+- [ccache](https://github.com/ccache/ccache)
+- [Travis-CI](https://travis-ci.com/github/tedklin/cmake_sandbox) (continuous integration) with GoogleTest
 
 ### Misc possible things to try / test
 - interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator / CLion
   - figure out how various code completion tools work for referenced external libraries works through CMake.
       - referencing a local installation or even a project-internal installation works, but that can be unreliable for various reasons (see branches for VSCode and Sublime).
 - formally packaging projects as libraries for others to use
-- ccache

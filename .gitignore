@@ -1,7 +1,7 @@
 # CUSTOM =========
 
 # I use this directory to store a copy of libraries like gtest so VSCode
-# can still use autocomplete (after maually setting include paths).
+# can still use autocomplete (after manually setting include paths).
 # This is generally considered bad practice, so only store copies of libraries
 # here AFTER you ensure it builds on CMake alone!!
 hidden_ext_libs/

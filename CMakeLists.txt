@@ -22,6 +22,13 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   include(CTest)
 endif()
 
+# ccache
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+    set(CMAKE_CUDA_COMPILER_LAUNCHER "${CCACHE_PROGRAM}") # CMake 3.9+
+endif()
+
 # set the cmake module path of the project
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 # find eigen using FindEigen3.cmake in cmake/ folder
