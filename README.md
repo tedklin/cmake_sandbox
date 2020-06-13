@@ -1,3 +1,5 @@
+**Note that this branch may not contain all the features of the master branch. Use the master branch as the project template and adjust accordingly to Sublime with the differences specified below.**
+
 ## Sublime-specific differences
 
 Unlike VSCode, Sublime (with the EasyClangComplete plugin) is actually able to find the dependencies included through CMake. The problem is it only works for .cpp files and not .h files. EasyClangComplete does find my explicit **local** installation of Eigen3 for .h files though (usr/local/include/eigen3)! My hack workaround for this was to put all external includes in one [header](https://github.com/tedklin/cmake_sandbox/blob/sublime/include/cmake_sandbox/Core.h) and have all my other .h files reference that header. This lets me switch which version I want to reference (CMake or explicit local installation) more easily than going through every separate .h file and finding dependencies in each one. Even with this workaround, this is generally considered bad C++ practice, and I'll probably stick with VSCode unless I find the right way to use EasyClangComplete / find another modern C++ autocomplete Sublime plugin.
