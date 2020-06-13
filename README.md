@@ -41,5 +41,6 @@ To run examples:
 ### Misc possible things to try / test
 - interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator / CLion
   - figure out how various code completion tools work for referenced external libraries works through CMake.
-      - referencing a local installation or even a project-internal installation works, but that can be unreliable for various reasons (see branches for VSCode and Sublime).
+      - referencing a local installation or even a project-internal installation works, but that can be unreliable for various reasons.
+      - see branches for VSCode and Sublime (but note that those may be outdated wrt the master branch. refer to respective readmes for specific differences from master).
 - formally packaging projects as libraries for others to use
