@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "**/build": true,
+        "**/cmake": true,
+        "**/hidden_thirdparty": true
+    }
+}
