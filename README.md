@@ -2,7 +2,9 @@
 
 ## VSCode-specific differences
 
-I haven't found a good way to get VSCode to recognize gtest (GoogleTest) headers. This problem is expected to recur with any library my CMake config pulls directly from git during the build process. My hack workaround right now is to maintain a top-level folder within the project directory named ***hidden_thirdparty*** with a copy of gtest's release source code. That folder is included in the gitignore to not pollute the repository (*note that the entire project build completely ignores it anyways*). I then manually add that folder to VSCode's include path for autocomplete support. 
+I haven't found a clean way to get VSCode to recognize gtest (GoogleTest) headers. There is the option of installing the package via *vcpkg*, which, at a cursory glance, introduces unknowns and unnecessary overhead into my local system (I want to keep my system as clean as possible and not add anything that I can't fully understand). 
+
+Anyways, the header detection problem is expected to recur with any library my CMake config pulls directly from git during the build process. My hack workaround right now is to maintain a top-level folder within the project directory named ***hidden_thirdparty*** with a copy of gtest's (release) source code. That folder is included in the gitignore to not pollute the repository (*note that the entire project build completely ignores it anyways*). I then manually add that folder to VSCode's include path for autocomplete support.
 
 The downside to this approach is for large-scale projects with many dependencies, it might be hard to keep track of / remember to sync different library versions. Continuous integration might help with making sure nothing breaks, but it's best to still keep the number of dependencies low. In addition, it is crucial to **only store copies of libraries in *hidden_thirdparty* AFTER you ensure it builds on CMake alone!**
 
