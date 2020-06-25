@@ -1,4 +1,4 @@
-#include "cmake_sandbox/ContinuousSystem.h"
+#include "cmake_sandbox/ContinuousSystem.hpp"
 
 #include <iostream>
 
@@ -11,14 +11,14 @@ int main() {
   // line, so the commented brackets are here to suppress that
 
   Eigen::Matrix3d A;
-  A << /*[[*/ 0, 1, 0, /*]*/
-      /*[*/ 100, 0, 0, /*]*/
-      /*[*/ 0, 0, 0;   /*]]*/
+  A << /*[[*/ 0, 1, 0 /*]*/,
+      /*[*/ 100, 0, 0 /*]*/,
+      /*[*/ 0, 0, 0   /*]]*/;
 
   Eigen::Vector3d B;
-  B << /*[[*/ 0, /*]*/
-      /*[*/ -25, /*]*/
-      /*[*/ 500; /*]]*/
+  B << /*[[*/ 0 /*]*/,
+      /*[*/ -25 /*]*/,
+      /*[*/ 500 /*]]*/;
 
   Eigen::RowVector3d K;
   K << 20, 5, 0.01;

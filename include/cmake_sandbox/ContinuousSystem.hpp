@@ -27,12 +27,10 @@ class ContinuousSystem {
   bool IsStable() const;
 
  private:
-  // eventually template this
   int STATE_DIM = 3;
   int INPUT_DIM = 1;
   using SCALAR = double;
 
-  // eventually type alias all of this using above template stuff
   Eigen::Matrix3d A_ = Eigen::Matrix3d::Identity();
   Eigen::Vector3d B_ = Eigen::Vector3d::Zero();
   Eigen::RowVector3d K_ = Eigen::RowVector3d::Zero();

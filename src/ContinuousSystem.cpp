@@ -1,4 +1,4 @@
-#include "cmake_sandbox/ContinuousSystem.h"
+#include "cmake_sandbox/ContinuousSystem.hpp"
 
 #include <complex>
 

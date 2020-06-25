@@ -9,4 +9,4 @@ macro(package_add_example EXAMPLENAME)
 endmacro()
 
 package_add_example(salto SaltoJumpingRobot.cpp)
-# ^ ADD MORE EXAMPLE EXECUTABLES HERE
+# ^^^ ADD MORE EXAMPLE EXECUTABLES HERE ^^^

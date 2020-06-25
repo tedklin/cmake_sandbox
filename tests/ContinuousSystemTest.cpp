@@ -1,4 +1,4 @@
-#include "cmake_sandbox/ContinuousSystem.h"
+#include "cmake_sandbox/ContinuousSystem.hpp"
 
 #include "Eigen/Eigen"
 #include "gtest/gtest.h"
@@ -7,9 +7,9 @@ TEST(ContinuousSystemTest, SanityCheck) { ASSERT_EQ(20, 20); }
 
 TEST(ContinuousSystemTest, SaltoStable) {
   Eigen::Matrix3d A;
-  A << /*[[*/ 0, 1, 0, /*]*/
-      /*[*/ 100, 0, 0, /*]*/
-      /*[*/ 0, 0, 0;   /*]]*/
+  A << /*[[*/ 0, 1, 0 /*]*/,
+      /*[*/ 100, 0, 0 /*]*/,
+      /*[*/ 0, 0, 0   /*]]*/;
 
   Eigen::Vector3d B;
   B << /*[[*/ 0, /*]*/
