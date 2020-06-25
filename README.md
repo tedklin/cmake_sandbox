@@ -1,10 +1,14 @@
 # CMake Sandbox
 [![Build Status](https://travis-ci.com/tedklin/cmake_sandbox.svg?branch=master)](https://travis-ci.com/tedklin/cmake_sandbox)
 
-This is a simple CMake project setup created from scratch, based heavily on [this excellent guide](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
-The plan is to continually add to this and use it as a standardized template for the creation of new personal CMake projects.
+This is a simple CMake project setup created from scratch, based heavily on [this excellent introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
+The plan is to continually add to this and use it as a standardized template for the creation of new personal projects.
 
 Note that the C++ code included is irrelevant, the project setup is the focus of this repository.
+
+## Quick setup
+
+Assuming all dependencies (CMake, relevant libraries, ccache, etc.) are installed, simply add newly created files in their respective folder's CMakeLists.txt. In each CMakeLists.txt, look for comments with three carets (**^^^**) to find where to do this.
 
 ## Running CMake
 
