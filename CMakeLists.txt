@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.11)
 project(cmake_sandbox LANGUAGES CXX)
 
 # Only do these if this is the main project, 
-# and not if it is included through add_subdirectory
+# and not if it is included through add_subdirectory.
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   # If no default build type is specified, use the presence of a .git
   # directory to determine whether to build Debug or Release.
@@ -31,9 +31,8 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
   # Testing only available if this is the main app
-  # Note this needs to be done in the main CMakeLists
-  # since it calls enable_testing, which must be in the
-  # main CMakeLists.
+  # Note this needs to be done in the main CMakeLists since it calls
+  # enable_testing, which must be in the main CMakeLists.
   include(CTest)
 
   # ccache
@@ -44,14 +43,15 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   endif()
 endif()
 
-# set the cmake module path of the project
+# Add this project's cmake modules to the CMAKE_MODULE_PATH
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
-# find eigen using FindEigen3.cmake in cmake/ folder
+
+# Using FindEigen3.cmake in cmake/ folder
 find_package(Eigen3 3.3 REQUIRED)
 
 # FetchContent
 include(FetchContent)
-# macro for FetchContent_MakeAvailable (included in CMake 3.14)
+# FetchContent_MakeAvailable macro (included in CMake 3.14)
 if(${CMAKE_VERSION} VERSION_LESS 3.14)
   macro(FetchContent_MakeAvailable NAME)
     FetchContent_GetProperties(${NAME})
@@ -62,13 +62,13 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
   endmacro()
 endif()
 
-# compiled library code is here
+# Compiled library code is here.
 add_subdirectory(src)
 
-# executable code is here
+# Executable code is here.
 add_subdirectory(examples)
 
-# test code is here
+# Test code is only built if this is the main project.
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
   add_subdirectory(tests)
 endif()
