@@ -1,14 +1,16 @@
 # CMake Sandbox
 [![Build Status](https://travis-ci.com/tedklin/cmake_sandbox.svg?branch=master)](https://travis-ci.com/tedklin/cmake_sandbox)
 
-This is a simple CMake project setup created from scratch, based heavily on [this excellent introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
-The plan is to continually add to this and use it as a standardized template for the creation of new personal projects.
+This is a CMake project setup created from scratch, based heavily on [this excellent introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/) along with tweaks I've observed from other CMake-based libraries.
+The plan is to continually add to this and use it as a standardized template for the creation of new personal projects and libraries.
 
 Note that the C++ code included is irrelevant, the project setup is the focus of this repository.
+
 
 ## Quick setup
 
 Assuming all dependencies (CMake, relevant libraries, ccache, etc.) are installed, simply add newly created files in their respective folder's CMakeLists.txt. In each CMakeLists.txt, look for comments with three carets (**^^^**) to find where to do this.
+
 
 ## Running CMake
 
@@ -20,18 +22,30 @@ cmake --build build
 
 Assuming you've built the project and are in the project home directory...
 
-To test:
+To run all tests:
 ~~~
 cmake --build build --target test
 ~~~
 
-To run examples:
+To run examples or specific tests:
 ~~~
 build/examples/MyExampleExecutable
+
+build/tests/MyTestExecutable
 ~~~
 
 Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if CMake detects the presence of a .git directory (thanks to a neat little [feature](https://blog.kitware.com/cmake-and-the-default-build-type/) shown here). 
 - This means if there's a .git directory detected (if you're doing dev on the project), you can use gdb on executables in the build folder. If there's no .git directory detected, CMake does an optimized "Release" build instead.
+
+
+## Integration with other CMake projects
+
+This template was designed such that a library based on this template can be easily integrated in other CMake projects that want to use the library.
+
+Suppose I want to use the *cmake_sandbox* library in another CMake project *MyProject*. I can simply download the entire *cmake_sandbox* repository, nest it in a folder under MyProject (e.g. "MyProject/thirdparty/cmake_sandbox"), and call add_subdirectory (e.g. *add_subdirectory(thirdparty/cmake_sandbox)* in MyProject's main CMakeLists.txt before building the code that relies on it.
+
+Including a library this way would then skip building the library's tests and avoid setting environment variables for MyProject.
+
 
 ## Common features supported
 
@@ -50,4 +64,3 @@ Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/C
   - figure out how various code completion tools work for referenced external libraries works through CMake.
       - referencing a local installation or even a project-internal installation works, but that can be unreliable for various reasons.
       - see branches for VSCode and Sublime (but note that those may be outdated wrt the master branch. refer to respective readmes for specific differences from master, and only use the master branch as the project template).
-- formally packaging projects as libraries for others to use
