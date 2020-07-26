@@ -15,7 +15,7 @@
                 "path": [
                     "${workspaceFolder}/include/**",
                     "/usr/local/include/eigen3/**",
-                    "${workspaceFolder}/hidden_thirdparty/googletest-release-1.10.0/googletest/**",
+                    "${workspaceFolder}/thirdparty/hidden/googletest-release-1.10.0/googletest/**",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true
@@ -26,7 +26,7 @@
             "includePath": [
                 "${workspaceFolder}/include/**",
                 "/usr/local/include/eigen3/**",
-                "${workspaceFolder}/hidden_thirdparty/googletest-release-1.10.0/googletest/**"
+                "${workspaceFolder}/thirdparty/hidden/googletest-release-1.10.0/googletest/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
@@ -38,7 +38,7 @@
                 "path": [
                     "${workspaceFolder}/include/**",
                     "/usr/local/include/eigen3/**",
-                    "${workspaceFolder}/hidden_thirdparty/googletest-release-1.10.0/googletest/**",
+                    "${workspaceFolder}/thirdparty/hidden/googletest-release-1.10.0/googletest/**",
                     "${workspaceFolder}"
                 ],
                 "limitSymbolsToIncludedHeaders": true

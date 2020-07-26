@@ -2,9 +2,6 @@
     "files.exclude": {
         "**/build": true,
         "**/cmake": true,
-        // note that this masks the folder from the include path
-        // specified in c_cpp_properties.json
-        "**/hidden_thirdparty": false
     },
     "editor.tabSize": 2
 }
