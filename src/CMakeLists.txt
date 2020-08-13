@@ -19,4 +19,4 @@ target_compile_features(cmake_sandbox_lib PUBLIC cxx_std_11)
 set_target_properties(cmake_sandbox_lib PROPERTIES CXX_EXTENSIONS OFF)
 
 # Compiler flags
-target_compile_options(cmake_sandbox_lib PRIVATE ${compiler_options})
+target_compile_options(cmake_sandbox_lib PRIVATE "-fPIC" "-Wall")

@@ -3,18 +3,9 @@ cmake_minimum_required(VERSION 3.11)
 
 project(cmake_sandbox LANGUAGES CXX)
 
-# Default compiler flags.
-list(APPEND compiler_options "-fPIC" "-Wall")
-
 # Only do these if this is the main project, 
 # and not if it is included through add_subdirectory.
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-  # Sanitizer flags for debugging.
-  # list(APPEND compiler_linker_options "-fsanitize=address" "-fno-omit-frame-pointer")
-
-  # Nicely support folders in IDEs
-  # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
   # Testing only available if this is the main app
   # Note this needs to be done in the main CMakeLists since it calls
   # enable_testing, which must be in the main CMakeLists.
@@ -26,6 +17,9 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
       set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
       set(CMAKE_CUDA_COMPILER_LAUNCHER "${CCACHE_PROGRAM}") # CMake 3.9+
   endif()
+
+  # Nicely support folders in IDEs
+  # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 endif()
 
 # If this is the main project, set default build type to Debug. 

@@ -34,10 +34,6 @@ build/examples/MyExampleExecutable
 build/tests/MyTestExecutable
 ~~~
 
-Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if this is the top-level CMake project.
-- This means if if you're doing dev directly on the project, you can use gdb on executables in the build folder. If you're simply using this library through add_subdirectory, CMake does an optimized "Release" build instead.
-- There is also an option for enabling [ASan](https://github.com/google/sanitizers/wiki/AddressSanitizer) if this is the top-level CMake project.
-
 
 ## Integration with other CMake projects
 
@@ -46,6 +42,8 @@ This template was designed such that a library based on this template can be eas
 Suppose I want to use the *cmake_sandbox* library in another CMake project *MyProject*. I can simply download the entire *cmake_sandbox* repository, nest it in a folder under MyProject (e.g. "MyProject/thirdparty/cmake_sandbox"), and call add_subdirectory (e.g. *add_subdirectory(thirdparty/cmake_sandbox)* in MyProject's main CMakeLists.txt before building the code that relies on it.
 
 Including a library this way would then skip building the library's tests and avoid setting environment variables for MyProject.
+
+Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if this is the top-level CMake project. This means if if you're doing dev directly on the project, you can use gdb on executables in the build folder. If you're simply using this library through add_subdirectory, CMake does an optimized "Release" build instead. You can also follow this idea for enabling tools like sanitizers and adding other compiler flags.
 
 
 ## Common features supported
@@ -59,9 +57,3 @@ Including a library this way would then skip building the library's tests and av
 ### Misc features
 - [ccache](https://github.com/ccache/ccache)
 - [Travis-CI](https://travis-ci.com/github/tedklin/cmake_sandbox) (continuous integration) with GoogleTest
-
-### Misc possible things to try / test
-- interfacing with different editors and IDEs, including VSCode / SublimeText / QtCreator / CLion
-  - figure out how various code completion tools work for referenced external libraries works through CMake.
-      - referencing a local installation or even a project-internal installation works, but that can be unreliable for various reasons.
-      - see branches for VSCode and Sublime (but note that those may be outdated wrt the master branch. refer to respective readmes for specific differences from master, and only use the master branch as the project template).
