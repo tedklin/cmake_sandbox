@@ -34,8 +34,9 @@ build/examples/MyExampleExecutable
 build/tests/MyTestExecutable
 ~~~
 
-Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if CMake detects the presence of a .git directory (thanks to a neat little [feature](https://blog.kitware.com/cmake-and-the-default-build-type/) shown here). 
-- This means if there's a .git directory detected (if you're doing dev on the project), you can use gdb on executables in the build folder. If there's no .git directory detected, CMake does an optimized "Release" build instead.
+Note that the [default build type](https://cmake.org/cmake/help/v3.11/variable/CMAKE_BUILD_TYPE.html) will be set to "Debug" if this is the top-level CMake project.
+- This means if if you're doing dev directly on the project, you can use gdb on executables in the build folder. If you're simply using this library through add_subdirectory, CMake does an optimized "Release" build instead.
+- There is also an option for enabling [ASan](https://github.com/google/sanitizers/wiki/AddressSanitizer) if this is the top-level CMake project.
 
 
 ## Integration with other CMake projects

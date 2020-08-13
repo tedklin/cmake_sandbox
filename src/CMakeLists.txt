@@ -16,3 +16,7 @@ target_link_libraries(cmake_sandbox_lib PUBLIC Eigen3::Eigen)
 
 # All users of this library will need at least C++11
 target_compile_features(cmake_sandbox_lib PUBLIC cxx_std_11)
+set_target_properties(cmake_sandbox_lib PROPERTIES CXX_EXTENSIONS OFF)
+
+# Compiler flags
+target_compile_options(cmake_sandbox_lib PRIVATE ${compiler_options})
