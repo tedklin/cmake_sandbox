@@ -12,8 +12,8 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
   # Sanitizer flags for debugging.
   # list(APPEND compiler_linker_options "-fsanitize=address" "-fno-omit-frame-pointer")
 
-  # Nicely support folders
-  set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+  # Nicely support folders in IDEs
+  # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
   # Testing only available if this is the main app
   # Note this needs to be done in the main CMakeLists since it calls
