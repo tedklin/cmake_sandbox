@@ -12,6 +12,11 @@ macro(package_add_test TESTNAME)
   # Create an exectuable in which test(s) will be stored
   add_executable(${TESTNAME} ${ARGN})
 
+  # Target features and options
+  target_compile_features(${TESTNAME} PRIVATE cxx_std_17)
+  set_target_properties(${TESTNAME} PROPERTIES CXX_EXTENSIONS OFF)
+  target_compile_options(${TESTNAME} PRIVATE "-Wall")
+
   # Link the Google test infrastructure, mocking library, and a default main
   # function to the test executable.
   # Remove g_test_main if writing your own main function.
